@@ -14,7 +14,11 @@
         "outputPath": "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+<<<<<<< Updated upstream
           "/Users/frankberrocal/.config/NuGet/NuGet.Config"
+=======
+          "/Users/frankberrocal/.nuget/NuGet/NuGet.Config"
+>>>>>>> Stashed changes
         ],
         "originalTargetFrameworks": [
           "net5.0"
