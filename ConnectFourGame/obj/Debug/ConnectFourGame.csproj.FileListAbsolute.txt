@@ -1,8 +1,0 @@
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\bin\Debug\ConnectFourGame.exe.config
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\bin\Debug\ConnectFourGame.exe
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\bin\Debug\ConnectFourGame.pdb
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\obj\Debug\ConnectFourGame.csproj.AssemblyReference.cache
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\obj\Debug\ConnectFourGame.csproj.SuggestedBindingRedirects.cache
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\obj\Debug\ConnectFourGame.csproj.CoreCompileInputs.cache
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\obj\Debug\ConnectFourGame.exe
-C:\Users\peter\Desktop\BVC Assignments\SODV1202_OOP\Project4Lin3\ConnectFourGame\obj\Debug\ConnectFourGame.pdb
