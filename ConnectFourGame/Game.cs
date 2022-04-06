@@ -56,7 +56,7 @@ namespace ConnectFourGame
                 {
                     Console.Write("\n\nPlayer X wins!\n\n");
 
-                    playSound.Win();
+                    //playSound.Win();
 
                     break;
                 }
@@ -64,7 +64,7 @@ namespace ConnectFourGame
                 {
                     Console.Write("\n\nPlayer O wins!\n\n");
 
-                    playSound.Win();
+                    //playSound.Win();
 
                     break;
                 }
@@ -110,7 +110,7 @@ namespace ConnectFourGame
                         Console.Write("\nInvalid column selected! Try again.\n\n");
                         Console.ResetColor();
 
-                        playSound.Wrong();
+                        //playSound.Wrong();
 
                         board.Display();
                         break;
@@ -127,6 +127,24 @@ namespace ConnectFourGame
         }
 
         //private void DropDisc()
+        private void DropDisc()
+        {
+            int ROWS = Board.Rows;
+            char disc = Board.disc;
+            int level;
+
+            for (level = ROWS - 1; level >= 0; level--)
+            {
+                if (board.boardGrid[level, board.selectedColumn] == ' ')
+                {
+                    board.boardGrid[level, board.selectedColumn] = disc;
+
+                    //playSound.Drop();
+
+                    break;
+                }
+            }
+        }
 
         private bool CheckForWinningMove(char disc)
         {
@@ -157,6 +175,33 @@ namespace ConnectFourGame
                     }
                 }
             }
+
+
+            // check POSITIVE SLOPE DIAGONAL slots for a winning move
+            for (int c = 0; c < COLS - 3; c++)
+            {
+                for (int r = 0; r < ROWS - 3; r++)
+                {
+                    if (board.boardGrid[r, c] == disc && board.boardGrid[r + 1, c + 1] == disc && board.boardGrid[r + 2, c + 2] == disc && board.boardGrid[r + 3, c + 3] == disc)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+
+            // check NEGATIVE SLOPE DIAGONAL slots for a winning move
+            for (int c = 0; c < COLS - 3; c++)
+            {
+                for (int r = 3; r < ROWS; r++)
+                {
+                    if (board.boardGrid[r, c] == disc && board.boardGrid[r - 1, c + 1] == disc && board.boardGrid[r - 2, c + 2] == disc && board.boardGrid[r - 3, c + 3] == disc)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
 
