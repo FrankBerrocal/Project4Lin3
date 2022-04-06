@@ -6,8 +6,12 @@ namespace ConnectFourGame
     {
         static void Main(string[] args)
         {
-            Console.Title = "Connect 4 - Test Project";
             // Main entry to the Connect Four Game App
+
+            Console.Title = "Connect Four Game";
+
+            Game game = new Game();
+            game.Run();
         }
     }
 }
