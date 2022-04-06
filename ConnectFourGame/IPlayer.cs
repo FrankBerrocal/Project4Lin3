@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    internal interface IPlayer
+    public interface IPlayer
     {
+        // Player Interface here
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    internal class Menu
+    public class Menu
     {
+        // Main Menu here
     }
 }

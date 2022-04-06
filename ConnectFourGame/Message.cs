@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    internal class Message
+    public class Message
     {
+        // Game texts and messages here
     }
 }
