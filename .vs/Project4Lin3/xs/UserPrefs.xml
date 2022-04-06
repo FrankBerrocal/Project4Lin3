@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{6CBB59AF-7745-4C50-AD84-772D12F637EE}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="ConnectFourGame/Board.cs">
     <Files>
-      <File FileName="ConnectFourGame/Program.cs" Line="15" Column="1" />
-      <File FileName="ConnectFourGame/Sound.cs" Line="1" Column="1" />
+      <File FileName="ConnectFourGame/Program.cs" Line="14" Column="24" />
+      <File FileName="ConnectFourGame/Game.cs" Line="22" Column="1" />
+      <File FileName="ConnectFourGame/Sound.cs" Line="14" Column="1" />
       <File FileName="ConnectFourGame/Message.cs" Line="9" Column="25" />
-      <File FileName="ConnectFourGame/Menu.cs" Line="1" Column="1" />
-      <File FileName="ConnectFourGame/IPlayer.cs" Line="1" Column="1" />
-      <File FileName="ConnectFourGame/Game.cs" Line="1" Column="1" />
-      <File FileName="ConnectFourGame/Board.cs" Line="1" Column="1" />
+      <File FileName="ConnectFourGame/Menu.cs" Line="8" Column="2" />
+      <File FileName="ConnectFourGame/IPlayer.cs" Line="14" Column="1" />
+      <File FileName="ConnectFourGame/Board.cs" Line="14" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Project4Lin3" expanded="True">
             <Node name="ConnectFourGame" expanded="True">
-              <Node name="Board.cs" selected="True" />
+              <Node name="IPlayer.cs" selected="True" />
             </Node>
           </Node>
         </State>
