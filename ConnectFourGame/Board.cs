@@ -8,5 +8,6 @@ namespace ConnectFourGame
 {
     public class Board
     {
+        // This is a class for our board.
     }
 }
