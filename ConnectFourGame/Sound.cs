@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    internal class Sound
+    public class Sound
     {
     }
 }
