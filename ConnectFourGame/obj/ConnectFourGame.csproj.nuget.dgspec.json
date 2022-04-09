@@ -16,9 +16,13 @@
         "configFilePaths": [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           "/Users/frankberrocal/.config/NuGet/NuGet.Config"
 =======
           "/Users/frankberrocal/.nuget/NuGet/NuGet.Config"
+>>>>>>> Stashed changes
+=======
+          "/Users/frankberrocal/.config/NuGet/NuGet.Config"
 >>>>>>> Stashed changes
 =======
           "/Users/frankberrocal/.config/NuGet/NuGet.Config"

@@ -43,14 +43,18 @@ namespace ConnectFourGame
         // print the board at its current state
         public void Display()
         {
+<<<<<<< Updated upstream
             Console.BackgroundColor = ConsoleColor.Black;  // to work with Mac
             Console.Clear();  // to work with Mac
 
             Console.ForegroundColor = ConsoleColor.Yellow;
+=======
+            Console.ForegroundColor = ConsoleColor.Yellow;  //colors for console
+>>>>>>> Stashed changes
 
             Console.WriteLine("  1   2   3   4   5   6   7  ");
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Blue; //colors for console
 
             Console.WriteLine("|---|---|---|---|---|---|---|");
 
@@ -63,7 +67,7 @@ namespace ConnectFourGame
                     Console.Write($"| {boardGrid[i, j]} ");
                 }
                 Console.WriteLine("|");
-                Console.WriteLine("|---|---|---|---|---|---|---|");
+                Console.WriteLine("|---|---|---|---|---|---|---| "); //trying to diplay row number not efficient.
             }
         }
     }
