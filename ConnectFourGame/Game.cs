@@ -36,7 +36,7 @@ namespace ConnectFourGame
                     break;
                 case 2:
                     // Exit game
-                    Console.WriteLine("\nPress Enter to exit");
+                    Console.WriteLine("\nPress Enter to exit");  //note:  message as object
                     Console.ReadKey(true);
                     Environment.Exit(0);
                     break;
@@ -48,13 +48,13 @@ namespace ConnectFourGame
         {
             do
             {
-                Console.Write($"Player playerName, your turn!\n");
+                Console.Write($"Player playerName, your turn!\n");  //note:  message as object
                 SelectColumn();
                 Console.Write("\n\n");
                 board.Display();
                 if (CheckForWinningMove('X') == true)
                 {
-                    Console.Write("\n\nPlayer X wins!\n\n");
+                    Console.Write("\n\nPlayer X wins!\n\n");//note:  message as object
 
                     //playSound.Win();
 
@@ -62,7 +62,7 @@ namespace ConnectFourGame
                 }
                 else if (CheckForWinningMove('O') == true)
                 {
-                    Console.Write("\n\nPlayer O wins!\n\n");
+                    Console.Write("\n\nPlayer O wins!\n\n");//note:  message as object
 
                     //playSound.Win();
 
@@ -107,7 +107,7 @@ namespace ConnectFourGame
                         board.selectedColumn = 666;
 
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("\nInvalid column selected! Try again.\n\n");
+                        Console.Write("\nInvalid column selected! Try again.\n\n");  //note:  message as object
                         Console.ResetColor();
 
                         //playSound.Wrong();
@@ -146,7 +146,7 @@ namespace ConnectFourGame
             }
         }
 
-        private bool CheckForWinningMove(char disc)
+        private bool CheckForWinningMove(char disc)  //note:  implement as object
         {
             int ROWS = Board.Rows;
             int COLS = Board.Columns;
