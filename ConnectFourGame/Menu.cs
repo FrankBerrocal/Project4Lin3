@@ -12,7 +12,7 @@ namespace ConnectFourGame
         
         private int SelectedIndex;
         private string[] Options;
-        public static string[] options = new string[] { "Play Game", "Change Language", "Exit Game" };
+        public static string[] options = new string[] { "Play Game", "Change Language", "Exit Game" };  //menu options
 
         public Menu(string[] options)
         {
@@ -37,7 +37,7 @@ namespace ConnectFourGame
             {
                 string currentOption = Options[i];
 
-                if (i == SelectedIndex)
+                if (i == SelectedIndex)  //change menu option color with selection.
                 {
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.BackgroundColor = ConsoleColor.White;

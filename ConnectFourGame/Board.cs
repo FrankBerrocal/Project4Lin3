@@ -34,7 +34,7 @@ namespace ConnectFourGame
             {
                 for (int c = 0; c < Columns; c++)
                 {
-                    boardGrid[r, c] = ' ';
+                    boardGrid[r, c] = ' ';  //spaces used to fill the board.
                 }
             }
         }
@@ -43,11 +43,11 @@ namespace ConnectFourGame
         // print the board at its current state
         public void Display()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow;  //font color
 
             Console.WriteLine("  1   2   3   4   5   6   7  ");
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Blue;  //font color
 
             Console.WriteLine("|---|---|---|---|---|---|---|");
 
@@ -60,7 +60,7 @@ namespace ConnectFourGame
                     Console.Write($"| {boardGrid[i, j]} ");
                 }
                 Console.WriteLine("|");
-                Console.WriteLine("|---|---|---|---|---|---|---|");
+                Console.WriteLine("|---|---|---|---|---|---|---|"); //display row number not efficient.
             }
         }
     }
