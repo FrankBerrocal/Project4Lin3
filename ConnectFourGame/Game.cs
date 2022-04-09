@@ -22,7 +22,7 @@ namespace ConnectFourGame
             Menu menu = new Menu(Menu.options);
             int selectedIndex = menu.Run();
 
-            switch (selectedIndex)
+            switch (selectedIndex)  //execution of program options.
             {
                 case 0:
                     Console.Clear();
