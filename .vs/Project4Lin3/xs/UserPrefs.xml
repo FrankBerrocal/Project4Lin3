@@ -1,17 +1,33 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="ConnectFourGame/Board.cs">
     <Files>
+<<<<<<< Updated upstream
       <File FileName="ConnectFourGame/Program.cs" Line="15" Column="1" />
       <File FileName="ConnectFourGame/Game.cs" />
       <File FileName="ConnectFourGame/Menu.cs" />
       <File FileName="ConnectFourGame/Board.cs" Line="67" Column="14" />
       <File FileName="../../../../../usr/local/share/dotnet/sdk/5.0.406/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
+=======
+      <File FileName="ConnectFourGame/Program.cs" Line="14" Column="24" />
+      <File FileName="ConnectFourGame/Game.cs" />
+      <File FileName="ConnectFourGame/Sound.cs" />
+      <File FileName="ConnectFourGame/Message.cs" />
+      <File FileName="ConnectFourGame/Menu.cs" />
+      <File FileName="ConnectFourGame/IPlayer.cs" />
+      <File FileName="ConnectFourGame/Board.cs" Line="14" Column="1" />
+>>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Project4Lin3" expanded="True">
+<<<<<<< Updated upstream
             <Node name="ConnectFourGame" selected="True" />
+=======
+            <Node name="ConnectFourGame" expanded="True">
+              <Node name="Board.cs" selected="True" />
+            </Node>
+>>>>>>> Stashed changes
           </Node>
         </State>
       </Pad>
