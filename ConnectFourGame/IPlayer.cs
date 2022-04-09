@@ -9,5 +9,6 @@ namespace ConnectFourGame
     public interface IPlayer
     {
         // Player Interface here
+        //this is the interface for potential AI game.
     }
 }

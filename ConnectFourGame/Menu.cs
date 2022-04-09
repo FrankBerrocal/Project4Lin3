@@ -14,14 +14,14 @@ namespace ConnectFourGame
         private string[] Options;
         public static string[] options = new string[] { "Play Game", "Change Language", "Exit Game" };  //menu options
 
-        public Menu(string[] options)
+        public Menu(string[] options)  //options should be passed as part of the constructor.   
         {
             Options = options;
             SelectedIndex = 0;
         }
 
 
-        private void DisplayOptions()
+        private void DisplayOptions()  //suitable for child class, create parent class for theric purposes.
         {
             string title = @"   ______                            __     ______                    ______                   
   / ____/___  ____  ____  ___  _____/ /_   / ____/___  __  _______   / ____/___ _____ ___  ___ 
@@ -55,7 +55,7 @@ namespace ConnectFourGame
         }
 
 
-        public int Run()
+        public int Run()  //describe in parent as abstract.  
         {
             ConsoleKey keyPressed;
 

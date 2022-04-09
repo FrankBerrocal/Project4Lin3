@@ -9,5 +9,6 @@ namespace ConnectFourGame
     public class Message
     {
         // Game texts and messages here
+        //all messages could be translated here.
     }
 }

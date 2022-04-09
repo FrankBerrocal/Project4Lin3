@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ConnectFourGame
 {
-    public interface EmptyInterface
+    public interface GameInterface
     {
     }
 }

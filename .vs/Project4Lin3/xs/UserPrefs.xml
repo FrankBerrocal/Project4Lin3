@@ -8,7 +8,7 @@
       <File FileName="ConnectFourGame/Sound.cs" Line="14" Column="1" />
       <File FileName="ConnectFourGame/Message.cs" Line="8" Column="2" />
       <File FileName="ConnectFourGame/IPlayer.cs" Line="13" Column="6" />
-      <File FileName="ConnectFourGame/EmptyInterface.cs" Line="4" Column="35" />
+      <File FileName="ConnectFourGame/EmptyInterface.cs" Line="8" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
