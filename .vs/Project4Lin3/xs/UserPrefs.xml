@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{6CBB59AF-7745-4C50-AD84-772D12F637EE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConnectFourGame/EmptyInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConnectFourGame/Menu.cs">
     <Files>
       <File FileName="ConnectFourGame/Program.cs" Line="14" Column="24" />
-      <File FileName="ConnectFourGame/Game.cs" />
-      <File FileName="ConnectFourGame/Board.cs" />
-      <File FileName="ConnectFourGame/Menu.cs" />
+      <File FileName="ConnectFourGame/Game.cs" Line="23" Column="1" />
+      <File FileName="ConnectFourGame/Board.cs" Line="19" Column="1" />
+      <File FileName="ConnectFourGame/Menu.cs" Line="71" Column="54" />
       <File FileName="ConnectFourGame/Sound.cs" />
       <File FileName="ConnectFourGame/Message.cs" />
       <File FileName="ConnectFourGame/IPlayer.cs" />
@@ -15,7 +15,7 @@
         <State name="__root__">
           <Node name="Project4Lin3" expanded="True">
             <Node name="ConnectFourGame" expanded="True">
-              <Node name="EmptyInterface.cs" selected="True" />
+              <Node name="Menu.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -29,15 +29,43 @@
           <Value>keyPressed</Value>
           <Value>SelectedIndex</Value>
           <Value>SelectedIndex</Value>
+          <Value>selectedIndex</Value>
+          <Value>selctedIndex</Value>
+          <Value>SelectedIndex</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ConnectFourGame PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="40" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="36" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="71" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="65" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="64" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="68" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="73" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="76" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="79" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="81" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="84" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="88" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="90" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="51" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="53" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="28" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="25" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="23" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="20" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="39" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="40" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Game.cs" relfile="ConnectFourGame/Game.cs" line="31" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="20" column="1" />
+      <Breakpoint file="/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/Menu.cs" relfile="ConnectFourGame/Menu.cs" line="60" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
