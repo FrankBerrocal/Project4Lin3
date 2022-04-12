@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace ConnectFourGame
 {
-    public class Sound
+    public interface MenuInterface
     {
-        // Sound effects here.
-       
+        void DisplayOptions();
+        void MenuRun();
+      
     }
+
 }

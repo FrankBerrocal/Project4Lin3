@@ -8,10 +8,15 @@ namespace ConnectFourGame
         {
             // Main entry to the Connect Four Game App
 
-            Console.Title = "Connect Four Game";
+           Console.Title = "Connect Four Game";
 
-            Game game = new Game();
-            game.Run();
+            Message mes = new MessageEnglish();
+            MenuEnglish2 menu = new();
+
+            mes.ConsoleTitle();
+            menu.MenuRun();
+
         }
+
     }
 }

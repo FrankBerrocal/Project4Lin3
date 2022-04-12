@@ -10,78 +10,59 @@ namespace ConnectFourGame
     {
         // Main game logic here
         Board board = new Board();
+        Message output = new MessageEnglish();
 
-        public void Run()
+        //private void StartNewGame().  Message object should be send as paramenter here
+        public void StartNewGame(Message output)
         {
-            DisplayMainMenu();
-            Console.ReadLine();
-        }
-
-        private void DisplayMainMenu()
-        {
-            Menu menu = new Menu(Menu.options);
-            int selectedIndex = menu.Run();
-
-            switch (selectedIndex)
-            {
-                case 0:
-                    Console.Clear();
-                    board.Initiate();
-                    board.Display();
-                    StartNewGame();
-                    break;
-                case 1:
-                    // Change language
-
-                    break;
-                case 2:
-                    // Exit game
-                    Console.WriteLine("\nPress Enter to exit");
-                    Console.ReadKey(true);
-                    Environment.Exit(0);
-                    break;
-            }
-        }
-
-        //private void StartNewGame()
-        private void StartNewGame()
-        {
+            MenuEnglish2 menu = new(); // Modified by Peter!
+            board.Initiate();  //moving from Menu.  They should be in Game.**********
+            board.Display();  // empty board 
             do
             {
-                Console.Write($"Player playerName, your turn!\n");
-                SelectColumn();
+                
+                output.PlayerTurn("X");  //Console.Write($"Player playerName, your turn!\n");
+                SelectColumn(output); // Modified by Peter!
                 Console.Write("\n\n");
-                board.Display();
+                board.Display();  // populated empty
                 if (CheckForWinningMove('X') == true)
                 {
-                    Console.Write("\n\nPlayer X wins!\n\n");
-
+                    
+                    output.PlayerWins("X");  //Console.Write("\n\nPlayer X wins!\n\n");  
                     //playSound.Win();
+                    Console.ReadKey(true); // Modified by Peter!
+                    menu.MenuRun(); // Modified by Peter!
 
                     break;
                 }
                 else if (CheckForWinningMove('O') == true)
                 {
-                    Console.Write("\n\nPlayer O wins!\n\n");
-
+                      
+                    output.PlayerWins("O");  //Console.Write("\n\nPlayer O wins!\n\n");
                     //playSound.Win();
+                    Console.ReadKey(true); // Modified by Peter!
+                    menu.MenuRun(); // Modified by Peter!
 
                     break;
                 }
             } while (true);
         }
 
-        //private void SelectColumn()
-        private void SelectColumn()
+        
+        private void SelectColumn(Message output) // Modified by Peter!
         {
+            MenuEnglish2 menu = new(); // Modified by Peter! 
             do
             {
-                Console.Write("\nChoose a column [1 to 7]: ");
+                output.SelectColumn();    //Console.Write("\nChoose a column [1 to 7]: "); 
                 string input = Console.ReadLine();
                 int c = Int32.Parse(input);
 
                 switch (c)
                 {
+                    case 0: // Modified by Peter!    
+                        menu.MenuRun(); // Takes player back to the Main Menu
+                        break;
                     case 1:
                         board.selectedColumn = 0;
                         break;
@@ -107,7 +88,8 @@ namespace ConnectFourGame
                         board.selectedColumn = 666;
 
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("\nInvalid column selected! Try again.\n\n");
+                        
+                        output.InvalidColumn();  //Console.Write("\nInvalid column selected! Try again.\n\n");
                         Console.ResetColor();
 
                         //playSound.Wrong();
@@ -146,10 +128,12 @@ namespace ConnectFourGame
             }
         }
 
-        private bool CheckForWinningMove(char disc)
+        private bool CheckForWinningMove(char disc) //All moves should be objects.
         {
             int ROWS = Board.Rows;
             int COLS = Board.Columns;
+
+
 
             // check HORIZONTAL slots for a winning move
             for (int c = 0; c < COLS - 3; c++)
