@@ -5,6 +5,7 @@ namespace ConnectFourGame
     
     public abstract class Message
     {
+<<<<<<< HEAD
         public static string[] options;
 
         public virtual void EnterToExit()
@@ -138,5 +139,9 @@ namespace ConnectFourGame
 
 
 
+=======
+        // Game texts and messages here
+        //all messages could be translated here.
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016
     }
 }

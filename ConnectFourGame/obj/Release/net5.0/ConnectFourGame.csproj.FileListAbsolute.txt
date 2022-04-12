@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/frankberrocal/Projects/Project4Lin3 FRANK/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.deps.json
 /Users/frankberrocal/Projects/Project4Lin3 FRANK/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.runtimeconfig.json
 /Users/frankberrocal/Projects/Project4Lin3 FRANK/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.runtimeconfig.dev.json
@@ -28,3 +29,19 @@
 /Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/bin/Release/net5.0/ref/ConnectFourGame.dll
 /Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.pdb
 /Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.genruntimeconfig.cache
+=======
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.deps.json
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.runtimeconfig.json
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.runtimeconfig.dev.json
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.dll
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ref/ConnectFourGame.dll
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/bin/Release/net5.0/ConnectFourGame.pdb
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.AssemblyInfoInputs.cache
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.AssemblyInfo.cs
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.csproj.CoreCompileInputs.cache
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.dll
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ref/ConnectFourGame.dll
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.pdb
+/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/Release/net5.0/ConnectFourGame.genruntimeconfig.cache
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016

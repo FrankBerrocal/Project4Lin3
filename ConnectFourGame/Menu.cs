@@ -14,17 +14,27 @@ namespace ConnectFourGame
         
         private int SelectedIndex;
         private string[] Options;
+<<<<<<< HEAD
         //private string[] Languages;
        
 
 
         public Menu()
+=======
+        public static string[] options = new string[] { "Play Game", "Change Language", "Exit Game" };  //menu options
+
+        public Menu(string[] options)  //options should be passed as part of the constructor.   
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016
         {
             Options = output.MenuOptions();  //brings the menu options from the message object           
         }
 
 
+<<<<<<< HEAD
         public virtual void DisplayOptions()  //public access methods
+=======
+        private void DisplayOptions()  //suitable for child class, create parent class for theric purposes.
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016
         {
 
             output.MaintTitle();
@@ -69,7 +79,12 @@ namespace ConnectFourGame
             }
         }
 
+<<<<<<< HEAD
         private int KeyListener(ConsoleKey keyPressed)  //private helper methods
+=======
+
+        public int Run()  //describe in parent as abstract.  
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016
         {
             do
             {

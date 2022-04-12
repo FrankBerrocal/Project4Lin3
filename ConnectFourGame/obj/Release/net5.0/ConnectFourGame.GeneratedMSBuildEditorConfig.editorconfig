@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = ConnectFourGame
+<<<<<<< HEAD
 build_property.ProjectDir = /Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/
+=======
+build_property.ProjectDir = /Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/
+>>>>>>> 8f3a01c74fc5a25ec3a98d3a121ce5f4db108016
