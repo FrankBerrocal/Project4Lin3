@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/ConnectFourGame.csproj": {}
+    "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj": {}
   },
   "projects": {
-    "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/ConnectFourGame.csproj": {
+    "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/ConnectFourGame.csproj",
+        "projectUniqueName": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj",
         "projectName": "ConnectFourGame",
-        "projectPath": "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/ConnectFourGame.csproj",
+        "projectPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj",
         "packagesPath": "/Users/frankberrocal/.nuget/packages/",
-        "outputPath": "/Users/frankberrocal/Documents/GitHub/Project4Lin3/ConnectFourGame/obj/",
+        "outputPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
 <<<<<<< Updated upstream

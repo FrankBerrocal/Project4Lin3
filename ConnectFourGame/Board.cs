@@ -8,6 +8,17 @@ namespace ConnectFourGame
 {
     public class Board
     {
+
+        //attributes
+        // disc
+        public static char disc = 'X';
+
+        //public static int selectedColumn = 0;
+        public int selectedColumn;
+
+        // 6 by 7 character array representing the game board
+        public char[,] boardGrid = new char[Rows, Columns];
+
         // This is a class for our board.
         // number of rows in the board
         public static int Rows { get; private set; } = 6;
@@ -15,15 +26,12 @@ namespace ConnectFourGame
         // number of columns in the board
         public static int Columns { get; private set; } = 7;
 
-        // 6 by 7 character array representing the game board
+        public Board()
+        {
+            //default constructor
+        }
 
-        public char[,] boardGrid = new char[Rows, Columns];
 
-        // disc
-        public static char disc = 'X';
-
-        //public static int selectedColumn = 0;
-        public int selectedColumn;
 
         // fill game board array with empty characters
         public void Initiate()
