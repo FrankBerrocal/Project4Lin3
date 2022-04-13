@@ -32,10 +32,11 @@ namespace ConnectFourGame
             base.PlayerTurn(playerName);
         }
 
-        public override void PlayerWins(string playerName)
+        public override void PlayerWins(string playerName)  //object should be sent here
         {
-            base.PlayerWins(playerName);
             //Console.WriteLine($"Player {playerName} wins!");
+            base.PlayerWins(playerName);
+           
         }
 
         public override void SelectColumn()
@@ -52,7 +53,7 @@ namespace ConnectFourGame
 
         public override string[] MenuOptions()
         {
-            options = new string[] { "Play Game", "Change Language", "Exit Game" };
+            options = new string[] { "Play in English", "Jugar en español", "Game Mode: Standard", "Exit Game" };
             return options;
 
         }
@@ -92,15 +93,6 @@ namespace ConnectFourGame
         {
             Console.WriteLine($"<< {currentOption} >>");
         }
-
-        public override string[] LanguageOptions()
-        {
-            options = new string[] { "English", "Español" };
-            return options;
-
-        }
-
-
 
     }
 }

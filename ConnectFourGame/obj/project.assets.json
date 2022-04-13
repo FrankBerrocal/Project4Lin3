@@ -13,26 +13,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj",
+      "projectUniqueName": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 3/ConnectFourGame/ConnectFourGame.csproj",
       "projectName": "ConnectFourGame",
-      "projectPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj",
+      "projectPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 3/ConnectFourGame/ConnectFourGame.csproj",
       "packagesPath": "/Users/frankberrocal/.nuget/packages/",
-      "outputPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/obj/",
+      "outputPath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 3/ConnectFourGame/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         "/Users/frankberrocal/.config/NuGet/NuGet.Config"
-=======
-        "/Users/frankberrocal/.nuget/NuGet/NuGet.Config"
->>>>>>> Stashed changes
-=======
-        "/Users/frankberrocal/.config/NuGet/NuGet.Config"
->>>>>>> Stashed changes
-=======
-        "/Users/frankberrocal/.config/NuGet/NuGet.Config"
->>>>>>> Stashed changes
       ],
       "originalTargetFrameworks": [
         "net5.0"

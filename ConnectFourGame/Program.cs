@@ -6,20 +6,16 @@ namespace ConnectFourGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Mac!");
+            // Main entry to the Connect Four Game App
 
-<<<<<<< Updated upstream
-            Console.WriteLine("Hello Windows");
-=======
            Console.Title = "Connect Four Game";
 
             Message mes = new MessageEnglish();
-            MenuEnglish2 menu = new();
+            MenuEnglish menu = new();
 
             mes.ConsoleTitle();
             menu.MenuRun();
 
->>>>>>> Stashed changes
         }
 
     }

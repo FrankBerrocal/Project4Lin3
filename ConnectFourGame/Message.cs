@@ -27,13 +27,34 @@ namespace ConnectFourGame
             Console.Write($"Player {playerName}, your turn!\n");
         }
 
-        public virtual void PlayerWins(string playerName)
+        public virtual void PlayerWins(string playerName) //object should be sent here
         {
-            Console.WriteLine($"Player {playerName} wins!");
+            //Console.WriteLine($"Player {playerName} wins!");
+            ConsoleColor red = ConsoleColor.Red;
+            ConsoleColor yellow = ConsoleColor.Yellow;
+            ConsoleColor blue = ConsoleColor.Blue;
+
+            Console.Write("\nPlayer ");
+
+            if (playerName == "X")
+            {
+                Console.ForegroundColor = red;
+            }
+            else if (playerName == "O")
+            {
+                Console.ForegroundColor = yellow;
+            }
+            
+            Console.Write(playerName);
+
+            Console.ForegroundColor = blue;
+
+            Console.Write(" wins!");
         }
 
-        public virtual void SelectColumn()
+        public virtual void SelectColumn() 
         {
+            Console.Write("\nEnter [0] to return to Main Menu");
             Console.Write("\nChoose a column [1 to 7]: ");
         }
 
@@ -106,14 +127,6 @@ namespace ConnectFourGame
         {
             Console.WriteLine($"<< {currentOption} >>");
         }
-
-        public virtual string[] LanguageOptions()
-        {
-            options = new string[] { "Language options" };
-            return options;
-
-        }
-
 
 
     }

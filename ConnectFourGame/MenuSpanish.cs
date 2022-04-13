@@ -9,18 +9,18 @@ namespace ConnectFourGame
     public class MenuSpanish : Menu
     {
 
-        private Message output = new MessageSpanish(); //creates a message object.
+        private Message Output = new MessageSpanish(); //creates a message object.
 
         private string[] Options;
 
 
         public MenuSpanish()
         {
-            Options = output.MenuOptions();  //brings the menu options from the message object           
+            Options = Output.MenuOptions();  //brings the menu options from the message object           
         }
 
 
-        public override void DisplayOptions() //public access modifier in the funtion definition.
+        public override void DisplayOptions() //public access modifier in the function definition.
         {
 
             base.DisplayOptions(); //parent has a private access modifier in helper method

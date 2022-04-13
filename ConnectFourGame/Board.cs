@@ -42,27 +42,36 @@ namespace ConnectFourGame
             {
                 for (int c = 0; c < Columns; c++)
                 {
-                    boardGrid[r, c] = ' ';
+                    boardGrid[r, c] = ' ';  //spaces used to fill the board.
                 }
             }
         }
 
+        public void SetColor(char c) // Modified by Peter!
+        {
+
+            if (c == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (c == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+        }
 
         // print the board at its current state
         public void Display()
         {
-<<<<<<< Updated upstream
-            Console.BackgroundColor = ConsoleColor.Black;  // to work with Mac
-            Console.Clear();  // to work with Mac
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-=======
-            Console.ForegroundColor = ConsoleColor.Yellow;  //colors for console
->>>>>>> Stashed changes
+            Console.ForegroundColor = ConsoleColor.Yellow;  //font color
 
             Console.WriteLine("  1   2   3   4   5   6   7  ");
 
-            Console.ForegroundColor = ConsoleColor.Blue; //colors for console
+            Console.ForegroundColor = ConsoleColor.Blue;  //font color
 
             Console.WriteLine("|---|---|---|---|---|---|---|");
 
@@ -72,10 +81,15 @@ namespace ConnectFourGame
             {
                 for (j = 0; j < Columns; j++)
                 {
-                    Console.Write($"| {boardGrid[i, j]} ");
+                    Console.ForegroundColor = ConsoleColor.Blue; // Modified by Peter!
+                    Console.Write("| "); // Modified by Peter!
+                    SetColor(boardGrid[i, j]); // Modified by Peter!
+                    Console.Write($"{boardGrid[i, j]} "); // Modified by Peter!
+                    Console.ForegroundColor = ConsoleColor.Blue; // Modified by Peter!
+                    //Console.Write($"| {boardGrid[i, j]} ");
                 }
                 Console.WriteLine("|");
-                Console.WriteLine("|---|---|---|---|---|---|---| "); //trying to diplay row number not efficient.
+                Console.WriteLine("|---|---|---|---|---|---|---|"); //display row number not efficient.
             }
         }
     }

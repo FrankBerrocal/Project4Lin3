@@ -29,13 +29,35 @@ namespace ConnectFourGame
             Console.Write($"Jugador{playerName}, es su turno!\n");
         }
 
-        public override void PlayerWins(string playerName)
+        public override void PlayerWins(string playerName) //object should be sent here
         {
-            Console.WriteLine($"Jugador {playerName} gana!");
+            //Console.WriteLine($"Jugador {playerName} gana!");
+
+            ConsoleColor red = ConsoleColor.Red;
+            ConsoleColor yellow = ConsoleColor.Yellow;
+            ConsoleColor blue = ConsoleColor.Blue;
+
+            Console.Write("\nJugador ");
+
+            if (playerName == "X")
+            {
+                Console.ForegroundColor = red;   // these properties should be defined as part of the object player
+            }
+            else if (playerName == "O")
+            {
+                Console.ForegroundColor = yellow;
+            }
+
+            Console.Write(playerName);
+
+            Console.ForegroundColor = blue;
+
+            Console.Write(" gana!");
         }
 
-        public override void SelectColumn()
+        public override void SelectColumn() 
         {
+            Console.Write("\nIngrese[0] para regresar al menú principal");
             Console.Write("\nEscoja una columna [1 a 7]: ");
         }
 
@@ -88,12 +110,7 @@ namespace ConnectFourGame
             Console.WriteLine($"<< {currentOption} >>");
         }
 
-        public override string[] LanguageOptions()
-        {
-            options = new string[] {"Español", "English"};
-            return options;
 
-        }
 
     }
 }

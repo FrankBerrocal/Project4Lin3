@@ -1,24 +1,8 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  "dgSpecHash": "Lr+tuBsbVJczwIufRPqkmHViZNHmNZojgn4436WEd6bWYLlDnLiaXQkpYHDKPg4SmAxw9VtbaCBBPcFpVCJe/g==",
-=======
-  "dgSpecHash": "XXSwm7XTe6241qMzxjAu6I87T1oDceubK0vjRu3AfEKnL9fuOWUfV2ybQpS/RjIbpSfpBKnUuBmMsc8dZyA1PA==",
->>>>>>> Stashed changes
-=======
-  "dgSpecHash": "Lr+tuBsbVJczwIufRPqkmHViZNHmNZojgn4436WEd6bWYLlDnLiaXQkpYHDKPg4SmAxw9VtbaCBBPcFpVCJe/g==",
->>>>>>> Stashed changes
-=======
-  "dgSpecHash": "Lr+tuBsbVJczwIufRPqkmHViZNHmNZojgn4436WEd6bWYLlDnLiaXQkpYHDKPg4SmAxw9VtbaCBBPcFpVCJe/g==",
->>>>>>> Stashed changes
-=======
-  "dgSpecHash": "LLwY+03qLySvztgMS9ERP57mEg0rz/SNMmtf8BTOvdYGQlUHQd5Kh+LtMeLU3VUrqp2zcr0NGB6M+AYjBkTulg==",
->>>>>>> Stashed changes
+  "dgSpecHash": "AuMti9hchdRiQH0zC9faRe31GLJkQNmR4F6Y8Qq66bLspeLuF9ppp4JQ0EHfvqPr+tkLpEer+/c9F6+77yhhvw==",
   "success": true,
-  "projectFilePath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 2/ConnectFourGame/ConnectFourGame.csproj",
+  "projectFilePath": "/Users/frankberrocal/Projects/Project4Lin3 FRANK Version 3/ConnectFourGame/ConnectFourGame.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

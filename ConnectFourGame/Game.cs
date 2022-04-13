@@ -6,31 +6,32 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    internal class Game
+    public class Game
     {
-<<<<<<< Updated upstream
-=======
         // Main game logic here
         Board board = new Board();
-        //Message output = new MessageEnglish();
+        MessageEnglish output = new MessageEnglish();
 
-        
-        public void StartNewGame(Message output) // Message object is sent as paramenter here, and this provides flesibility to choose the language.
+        //private void StartNewGame().  Message object should be send as paramenter here
+        public void StartNewGame(Message output)
         {
+            MenuEnglish menu = new(); 
             board.Initiate();  //moving from Menu.  They should be in Game.**********
             board.Display();  // empty board 
             do
             {
                 
                 output.PlayerTurn("X");  //Console.Write($"Player playerName, your turn!\n");
-                SelectColumn(output);
+                SelectColumn(output); 
                 Console.Write("\n\n");
                 board.Display();  // populated empty
                 if (CheckForWinningMove('X') == true)
                 {
                     
                     output.PlayerWins("X");  //Console.Write("\n\nPlayer X wins!\n\n");  
-                    //playSound.Win();  eliminated from .net framework 5
+                    //playSound.Win();
+                    Console.ReadKey(true); 
+                    menu.MenuRun(); 
 
                     break;
                 }
@@ -38,7 +39,9 @@ namespace ConnectFourGame
                 {
                       
                     output.PlayerWins("O");  //Console.Write("\n\nPlayer O wins!\n\n");
-                    //playSound.Win(); eliminated from .net framework 5
+                    //playSound.Win();
+                    Console.ReadKey(true); 
+                    menu.MenuRun(); 
 
                     break;
                 }
@@ -46,17 +49,20 @@ namespace ConnectFourGame
         }
 
         
-        private void SelectColumn(Message output)
+        private void SelectColumn(Message output) 
         {
+            MenuEnglish menu = new(); 
             do
             {
-                
                 output.SelectColumn();    //Console.Write("\nChoose a column [1 to 7]: "); 
                 string input = Console.ReadLine();
                 int c = Int32.Parse(input);
 
                 switch (c)
                 {
+                    case 0:    
+                        menu.MenuRun(); // Takes player back to the Main Menu
+                        break;
                     case 1:
                         board.selectedColumn = 0;
                         break;
@@ -115,7 +121,7 @@ namespace ConnectFourGame
                 {
                     board.boardGrid[level, board.selectedColumn] = disc;
 
-                    //playSound.Drop(); eliminated from .net framework 5
+                    //playSound.Drop();
 
                     break;
                 }
@@ -183,6 +189,5 @@ namespace ConnectFourGame
         }
 
 
->>>>>>> Stashed changes
     }
 }
