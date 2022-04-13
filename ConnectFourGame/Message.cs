@@ -7,67 +7,83 @@ namespace ConnectFourGame
     {
         public static string[] options;
 
-        public virtual void EnterToExit()
-        {
-            Console.WriteLine("\nPress Enter to exit");
-        }
+        public virtual void EnterToExit() => Console.WriteLine("\nPress Enter to exit");
 
-        public virtual void ClearConsole()
-        {
-           Console.Clear();
-        }
+        public virtual void ClearConsole() => Console.Clear();
 
-        public virtual void PlayerTurn()
-        {
-            Console.Clear();
-        }
+        public virtual void PlayerTurn() => Console.Clear();
 
-        public virtual void PlayerTurn(string playerName)
-        {
-            Console.Write($"Player {playerName}, your turn!\n");
-        }
+        public virtual void PlayerTurn(string playerName) => Console.Write($"Player {playerName}, your turn!\n");
+
+        public virtual void ConsoleTitle() => Console.Title = "Connect Four Game";
+
+        public virtual void ForegroundBlack() => Console.ForegroundColor = ConsoleColor.Black;
+
+        public virtual void ForegroundWhite() => Console.ForegroundColor = ConsoleColor.White;
+
+        public virtual void ForegroundYellow() => Console.ForegroundColor = ConsoleColor.Yellow;
+
+        public virtual void ForegroundRed() => Console.ForegroundColor = ConsoleColor.Red;
+
+        public virtual void ForegroundBlue() => Console.ForegroundColor = ConsoleColor.Blue;
+
+        public virtual void BackgroundBlack() => Console.BackgroundColor = ConsoleColor.Black;
+
+        public virtual void BackgroundWhite() => Console.BackgroundColor = ConsoleColor.White;
+
+        public virtual void BackgroundYellow() => Console.BackgroundColor = ConsoleColor.Yellow;
+
+        public virtual void BackgroundRed() => Console.BackgroundColor = ConsoleColor.Red;
+
+        public virtual void BackgroundBlue() => Console.BackgroundColor = ConsoleColor.Blue;
+
+        public virtual void ResetColor() => Console.ResetColor();
+
+        public virtual void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>");  //this should be writeline
+
+        public virtual void Spaces() => Console.WriteLine("\n\n");
+
+        public virtual void ReadKey() => Console.ReadKey(true);
+
+        public virtual void Write(string element) => Console.Write(element);
 
         public virtual void PlayerWins(string playerName) //object should be sent here
         {
-            //Console.WriteLine($"Player {playerName} wins!");
-            ConsoleColor red = ConsoleColor.Red;
-            ConsoleColor yellow = ConsoleColor.Yellow;
-            ConsoleColor blue = ConsoleColor.Blue;
 
-            Console.Write("\nPlayer ");
+            this.Write("\nPlayer ");
 
             if (playerName == "X")
             {
-                Console.ForegroundColor = red;
+                this.ForegroundRed();
+
             }
             else if (playerName == "O")
             {
-                Console.ForegroundColor = yellow;
+                this.ForegroundYellow();
+
             }
-            
-            Console.Write(playerName);
 
-            Console.ForegroundColor = blue;
-
-            Console.Write(" wins!");
+            this.Write(playerName);
+            this.ForegroundBlue();
+            this.Write(" wins!");
         }
 
-        public virtual void SelectColumn() 
+        public virtual void SelectColumn()
         {
-            Console.Write("\nEnter [0] to return to Main Menu");
-            Console.Write("\nChoose a column [1 to 7]: ");
+            this.Write("\nEnter [0] to return to Main Menu");
+            this.Write("\nChoose a column [1 to 7]: ");
         }
 
         public virtual void InvalidColumn()
         {
-            Console.Write("\nInvalid column selected! Try again.\n\n");
+            this.Write("\nInvalid column selected! Try again.\n\n");
         }
 
         public virtual string[] MenuOptions()
         {
             options = new string[] { "Game options" };
             return options;
-            
+
         }
 
         public virtual void MaintTitle()
@@ -78,88 +94,10 @@ namespace ConnectFourGame
 / /___/ /_/ / / / / / / /  __/ /__/ /_   / __/ / /_/ / /_/ / /     / /_/ / /_/ / / / / / /  __/
 \____/\____/_/ /_/_/ /_/\___/\___/\__/  /_/    \____/\__,_/_/      \____/\__,_/_/ /_/ /_/\___/                                                                                                                                                                                                                                 
 ";
-            Console.ForegroundColor = ConsoleColor.Yellow;  
-            Console.WriteLine(title);
-            Console.ResetColor();
-        }
 
-        public virtual void ConsoleTitle()
-        {
-            Console.Title = "Connect Four Game";
-        }
-
-        public virtual void  ForegroundBlack()
-        {
-            Console.ForegroundColor = ConsoleColor.Black;
-        }
-
-        public virtual void ForegroundWhite()
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-        }
-
-        public virtual void ForegroundYellow()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-        }
-
-        public virtual void ForegroundRed()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-        }
-
-        public virtual void ForegroundBlue()
-        {
-            Console.ForegroundColor = ConsoleColor.Blue;
-        }
-
-        public virtual void BackgroundBlack()
-        {
-            Console.BackgroundColor = ConsoleColor.Black;
-        }
-
-        public virtual void BackgroundWhite()
-        {
-            Console.BackgroundColor = ConsoleColor.White;
-        }
-
-        public virtual void BackgroundYellow()
-        {
-            Console.BackgroundColor = ConsoleColor.Yellow;
-        }
-
-        public virtual void BackgroundRed()
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-        }
-
-        public virtual void BackgroundBlue()
-        {
-            Console.BackgroundColor = ConsoleColor.Blue;
-        }
-
-        public virtual void ResetColor()
-        {
-            Console.ResetColor();
-        }
-
-        public virtual void DisplayCurrentOption(string currentOption)
-        {
-            Console.WriteLine($"<< {currentOption} >>");
-        }
-
-        public virtual void Spaces()
-        {
-            Console.Write("\n\n");
-        }
-
-        public virtual void ReadKey()
-        {
-            Console.ReadKey(true);
-        }
-
-        public virtual void Test()
-        {
+            this.ForegroundYellow();
+            this.Write(title);
+            this.ResetColor();
 
         }
 

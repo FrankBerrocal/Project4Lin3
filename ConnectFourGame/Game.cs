@@ -24,14 +24,14 @@ namespace ConnectFourGame
                 output.PlayerTurn("X");  //Console.Write($"Player playerName, your turn!\n");
                 SelectColumn(output);
                 output.Spaces();
-                //Console.Write("\n\n");
+                
                 board.Display();  // populated empty
                 if (CheckForWinningMove('X') == true)
                 {
                     
                     output.PlayerWins("X");  //Console.Write("\n\nPlayer X wins!\n\n");  
                     //playSound.Win();
-                    //Console.ReadKey(true);
+                    
                     output.ReadKey();
                     menu.MenuRun(); 
 
@@ -42,7 +42,7 @@ namespace ConnectFourGame
                       
                     output.PlayerWins("O");  //Console.Write("\n\nPlayer O wins!\n\n");
                     //playSound.Win();
-                    //Console.ReadKey(true);
+                    
                     output.ReadKey();
                     menu.MenuRun(); 
 
@@ -90,12 +90,12 @@ namespace ConnectFourGame
                     default:
                         board.selectedColumn = 666;
 
-                        //Console.ForegroundColor = ConsoleColor.Red;
+                        
                         output.ForegroundRed();
                         
-                        output.InvalidColumn();  //Console.Write("\nInvalid column selected! Try again.\n\n");
+                        output.InvalidColumn();  
                         output.ResetColor();
-                        //Console.ResetColor();
+                        
 
                         //playSound.Wrong();
 

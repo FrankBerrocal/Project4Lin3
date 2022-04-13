@@ -97,7 +97,6 @@ namespace ConnectFourGame
                     {
                         SelectedIndex = Options.Length - 1;
 
-
                     }
                 }
 

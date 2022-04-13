@@ -14,63 +14,17 @@ namespace ConnectFourGame
             //empty constructor
         }
 
-        public override void EnterToExit()
-        {
-            //Console.WriteLine("\nPress Enter to exit");
-            base.EnterToExit();
-        }
+        public override void EnterToExit() => base.EnterToExit();
 
-        public override void ClearConsole()
-        {
-            //Console.Clear();
-            base.ClearConsole();
-        }
+        public override void ClearConsole() => base.ClearConsole();
 
-        public override void PlayerTurn(string playerName)
-        {
-            //Console.Write($"Player {playerName}, your turn!\n");
-            base.PlayerTurn(playerName);
-        }
+        public override void PlayerTurn(string playerName) => base.PlayerTurn(playerName);
 
-        public override void PlayerWins(string playerName)  //object should be sent here
-        {
-            //Console.WriteLine($"Player {playerName} wins!");
-            base.PlayerWins(playerName);
-           
-        }
+        public override void PlayerWins(string playerName)  => base.PlayerWins(playerName);
 
-        public override void SelectColumn()
-        {
-            //Console.Write("\nChoose a column [1 to 7]: ");
-            base.SelectColumn();
-        }
+        public override void SelectColumn() => base.SelectColumn();
 
-        public override void InvalidColumn()
-        {
-            //Console.Write("\nInvalid column selected! Try again.\n\n");
-            base.InvalidColumn();
-        }
-
-        public override string[] MenuOptions()
-        {
-            options = new string[] { "Play in English", "Jugar en español", "Game Mode: Standard", "Exit Game" };
-            return options;
-
-        }
-
-        public override void MaintTitle()
-        {
-            string title = @"   ______                            __     ______                    ______                   
-  / ____/___  ____  ____  ___  _____/ /_   / ____/___  __  _______   / ____/___ _____ ___  ___ 
- / /   / __ \/ __ \/ __ \/ _ \/ ___/ __/  / /_  / __ \/ / / / ___/  / / __/ __ `/ __ `__ \/ _ \
-/ /___/ /_/ / / / / / / /  __/ /__/ /_   / __/ / /_/ / /_/ / /     / /_/ / /_/ / / / / / /  __/
-\____/\____/_/ /_/_/ /_/\___/\___/\__/  /_/    \____/\__,_/_/      \____/\__,_/_/ /_/ /_/\___/                                                                                                                                                                                                                                 
-";
-            Console.ForegroundColor = ConsoleColor.Yellow;  
-            Console.WriteLine(title);
-            Console.ResetColor();
-
-        }
+        public override void InvalidColumn() => base.InvalidColumn();
 
         public override void ConsoleTitle() => base.ConsoleTitle();
 
@@ -95,16 +49,32 @@ namespace ConnectFourGame
         public override void BackgroundBlue() => base.BackgroundBlue();
 
         public override void ResetColor() => base.ResetColor();        
-       
 
-        public override void DisplayCurrentOption(string currentOption)
+        public override void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>"); //this should be writeline
+
+        public override void Spaces() => this.Write("\n\n");
+
+        public override void Write(string element) => Console.Write(element);
+
+        public override string[] MenuOptions()
         {
-            Console.WriteLine($"<< {currentOption} >>");
+            options = new string[] { "Play in English", "Jugar en español", "Game Mode: Standard", "Exit Game" };
+            return options;
+
         }
 
-        public override void Spaces()
+        public override void MaintTitle()
         {
-            Console.Write("\n\n");
+            string title = @"   ______                            __     ______                    ______                   
+  / ____/___  ____  ____  ___  _____/ /_   / ____/___  __  _______   / ____/___ _____ ___  ___ 
+ / /   / __ \/ __ \/ __ \/ _ \/ ___/ __/  / /_  / __ \/ / / / ___/  / / __/ __ `/ __ `__ \/ _ \
+/ /___/ /_/ / / / / / / /  __/ /__/ /_   / __/ / /_/ / /_/ / /     / /_/ / /_/ / / / / / /  __/
+\____/\____/_/ /_/_/ /_/\___/\___/\__/  /_/    \____/\__,_/_/      \____/\__,_/_/ /_/ /_/\___/                                                                                                                                                                                                                                 
+";
+            base.ForegroundYellow();
+            this.Write(title);
+            base.ResetColor();
+
         }
 
     }
