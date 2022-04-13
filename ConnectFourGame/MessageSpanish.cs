@@ -14,23 +14,11 @@ namespace ConnectFourGame
             //empty constructor
         }
 
-        public override void EnterToExit() => this.Write("\nPresione Enter para Salir");
+        // insert all future arrow functions alphabetically
 
         public override void ClearConsole() => base.ClearConsole();
 
-        public override void PlayerTurn(string playerName) => this.Write($"Jugador{playerName}, es su turno!\n");
-
-        public override void InvalidColumn() => this.Write("\nColumna seleccionada no es valida! Intenta de nuevo.\n\n");
-
         public override void ConsoleTitle() => Console.Title = "Juego Cuatro en Linea";
-
-        public override void ForegroundBlack() => base.ForegroundBlack();
-
-        public override void ForegroundWhite() => base.ForegroundWhite();
-
-        public override void ForegroundYellow() => base.ForegroundYellow();
-
-        public override void ForegroundRed() => base.ForegroundRed();
 
         public override void BackgroundBlack() => base.BackgroundBlack();
 
@@ -40,15 +28,42 @@ namespace ConnectFourGame
 
         public override void BackgroundRed() => base.BackgroundRed();
 
-        public override void ResetColor() => base.ResetColor();
-
         public override void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>"); //this should be writeline
 
-        public override void Spaces() => base.Spaces();
+        public override void EnterToExit() => this.Write("\nPresione Enter para Salir");
+
+        public override void ForegroundBlack() => base.ForegroundBlack();
+
+        public override void ForegroundBlue() => Console.ForegroundColor = ConsoleColor.Blue;
+
+        public override void ForegroundCyan() => Console.ForegroundColor = ConsoleColor.Cyan;
+
+        public override void ForegroundDarkYellow() => Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+        public override void ForegroundGray() => Console.ForegroundColor = ConsoleColor.Gray;
+
+        public override void ForegroundMagenta() => Console.ForegroundColor = ConsoleColor.Magenta;
+
+        public override void ForegroundRed() => base.ForegroundRed();
+
+        public override void ForegroundWhite() => base.ForegroundWhite();
+
+        public override void ForegroundYellow() => base.ForegroundYellow();
+
+        public override void InvalidColumn() => this.Write("\nColumna seleccionada no es valida! Intenta de nuevo.\n\n");
+
+        public override void PlayerTurn(string playerName) => this.Write($"Jugador {playerName}, es su turno!\n");
 
         public override void ReadKey() => base.ReadKey();
 
+        public override void ResetColor() => base.ResetColor();
+
+        public override void Spaces() => base.Spaces();
+
         public override void Write(string element) => Console.Write(element);
+
+        public override void WriteLine(string element) => Console.WriteLine(element);
+
 
         public override void PlayerWins(string playerName) //object should be sent here
         {

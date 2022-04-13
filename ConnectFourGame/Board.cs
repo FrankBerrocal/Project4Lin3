@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace ConnectFourGame 
 {
     public class Board : BoardInterface
-    {
+    { 
 
         //attributes
         // disc
-        public static char disc = 'X';
+
+        public static char disc = 'X'; //this sould be the object.
 
         //public static int selectedColumn = 0;
         public int selectedColumn;
@@ -25,6 +26,8 @@ namespace ConnectFourGame
 
         // number of columns in the board
         public static int Columns { get; private set; } = 7;
+
+        Message output = new MessageEnglish();
 
         public Board()
         {
@@ -47,33 +50,32 @@ namespace ConnectFourGame
             }
         }
 
-        public void SetColor(char c) // This should be defined by the objects
+        public void SetColor(char c) // The object should be send in the initiate game, we dont receive the Message object here for the Color setting.  Lets leave it like that.
         {
 
             if (c == 'X')
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
+            { 
+                output.ForegroundRed();  //calling the output object of the Player
+                
             }
             else if (c == 'O')
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                output.ForegroundYellow();
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                output.ForegroundBlue();
             }
         }
 
         // print the board at its current state
         public void Display()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;  //font color
-
-            Console.WriteLine("  1   2   3   4   5   6   7  ");
-
-            Console.ForegroundColor = ConsoleColor.Blue;  //font color
-
-            Console.WriteLine("|---|---|---|---|---|---|---|");
+           
+            output.ForegroundMagenta();  //
+            output.WriteLine("  1   2   3   4   5   6   7  ");
+            output.ForegroundBlue();
+            output.WriteLine("|---|---|---|---|---|---|---|");
 
             int i, j;
 
@@ -81,15 +83,16 @@ namespace ConnectFourGame
             {
                 for (j = 0; j < Columns; j++)
                 {
-                    Console.ForegroundColor = ConsoleColor.Blue; // Modified by Peter!
-                    Console.Write("| "); // Modified by Peter!
-                    SetColor(boardGrid[i, j]); // Modified by Peter!
-                    Console.Write($"{boardGrid[i, j]} "); // Modified by Peter!
-                    Console.ForegroundColor = ConsoleColor.Blue; // Modified by Peter!
-                    //Console.Write($"| {boardGrid[i, j]} ");
+                    output.ForegroundBlue();
+                    output.Write("| ");
+                    SetColor(boardGrid[i, j]);
+                    output.Write($"{boardGrid[i, j]} ");
+                    output.ForegroundBlue();
                 }
-                Console.WriteLine("|");
-                Console.WriteLine("|---|---|---|---|---|---|---|"); //display row number not efficient.
+
+                output.WriteLine("|");
+                output.WriteLine("|---|---|---|---|---|---|---|");
+
             }
         }
     }

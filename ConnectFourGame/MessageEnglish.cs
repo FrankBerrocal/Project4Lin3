@@ -14,9 +14,45 @@ namespace ConnectFourGame
             //empty constructor
         }
 
-        public override void EnterToExit() => base.EnterToExit();
+        // insert all future arrow functions alphabetically
 
         public override void ClearConsole() => base.ClearConsole();
+
+        public override void ConsoleTitle() => base.ConsoleTitle();
+
+        public override void EnterToExit() => base.EnterToExit();
+
+        public override void BackgroundBlack() => base.BackgroundBlack();
+
+        public override void BackgroundBlue() => base.BackgroundBlue();
+
+        public override void BackgroundRed() => base.BackgroundRed();
+        
+        public override void BackgroundWhite() => base.BackgroundWhite();
+
+        public override void BackgroundYellow() => base.BackgroundYellow();
+
+        public override void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>"); //this should be writeline
+
+        public override void ForegroundBlack() => base.ForegroundBlack();
+
+        public override void ForegroundBlue() => base.ForegroundBlue();
+
+        public override void ForegroundCyan() => base.ForegroundCyan();
+
+        public override void ForegroundDarkYellow() => base.ForegroundDarkYellow();
+
+        public override void ForegroundGray() => base.ForegroundGray();
+
+        public override void ForegroundMagenta() => base.ForegroundMagenta();
+
+        public override void ForegroundRed() => base.ForegroundRed();
+
+        public override void ForegroundWhite() => base.ForegroundWhite();
+
+        public override void ForegroundYellow() => base.ForegroundYellow();
+        
+        public override void InvalidColumn() => base.InvalidColumn();
 
         public override void PlayerTurn(string playerName) => base.PlayerTurn(playerName);
 
@@ -24,37 +60,13 @@ namespace ConnectFourGame
 
         public override void SelectColumn() => base.SelectColumn();
 
-        public override void InvalidColumn() => base.InvalidColumn();
-
-        public override void ConsoleTitle() => base.ConsoleTitle();
-
-        public override void ForegroundBlack() => base.ForegroundBlack();
-
-        public override void ForegroundWhite() => base.ForegroundWhite();
-
-        public override void ForegroundYellow() => base.ForegroundYellow();
-
-        public override void ForegroundRed() => base.ForegroundRed();
-
-        public override void ForegroundBlue() => base.ForegroundBlue();
-
-        public override void BackgroundBlack() => base.BackgroundBlack();
-
-        public override void BackgroundWhite() => base.BackgroundWhite();
-
-        public override void BackgroundYellow() => base.BackgroundYellow();
-
-        public override void BackgroundRed() => base.BackgroundRed();
-
-        public override void BackgroundBlue() => base.BackgroundBlue();
-
         public override void ResetColor() => base.ResetColor();        
-
-        public override void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>"); //this should be writeline
 
         public override void Spaces() => this.Write("\n\n");
 
         public override void Write(string element) => Console.Write(element);
+
+        public override void WriteLine(string element) => Console.WriteLine(element);
 
         public override string[] MenuOptions()
         {

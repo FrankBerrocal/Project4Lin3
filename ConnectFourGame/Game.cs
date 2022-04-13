@@ -8,28 +8,34 @@ namespace ConnectFourGame
 {
     public class Game
     {
-        // Main game logic here
+        
         Board board = new Board();
-        Message output = new MessageEnglish();
 
-        //private void StartNewGame().  Message object should be send as paramenter here
         public void StartNewGame(Message output)
         {
-            MenuEnglish menu = new(); 
-            board.Initiate();  //moving from Menu.  They should be in Game.**********
-            board.Display();  // empty board 
+            MenuEnglish menu = new();
+
+            Player player1 = new Player("X", output);  //Definition of player properties, sending name and object message
+            Player player2 = new Player("O", output);
+
+            board.Initiate();  
+            board.Display();  // empty board
+            
             do
             {
-                
-                output.PlayerTurn("X");  //Console.Write($"Player playerName, your turn!\n");
+                //validation for the player turn should be made here.  The second validation should be made with player2
+                player1.DisplayPlayerColorDarkYellow();  //change the color of foreground for the object.
+                output.PlayerTurn(player1.ToString());  //Display the name of the object.
+                //until here for object manipulation
+                output.ForegroundBlue();
                 SelectColumn(output);
                 output.Spaces();
                 
                 board.Display();  // populated empty
-                if (CheckForWinningMove('X') == true)
+                if (CheckForWinningMove(char.Parse(player1.ToString())) == true)  //name is converted to char for validation
                 {
                     
-                    output.PlayerWins("X");  //Console.Write("\n\nPlayer X wins!\n\n");  
+                    output.PlayerWins(player1.ToString()); //name presented in the message
                     //playSound.Win();
                     
                     output.ReadKey();
@@ -37,10 +43,10 @@ namespace ConnectFourGame
 
                     break;
                 }
-                else if (CheckForWinningMove('O') == true)
+                else if (CheckForWinningMove(char.Parse(player2.ToString())) == true) //name is converted to char for validation
                 {
                       
-                    output.PlayerWins("O");  //Console.Write("\n\nPlayer O wins!\n\n");
+                    output.PlayerWins(player2.ToString());  //name presented in the message
                     //playSound.Win();
                     
                     output.ReadKey();
@@ -90,9 +96,7 @@ namespace ConnectFourGame
                     default:
                         board.selectedColumn = 666;
 
-                        
                         output.ForegroundRed();
-                        
                         output.InvalidColumn();  
                         output.ResetColor();
                         

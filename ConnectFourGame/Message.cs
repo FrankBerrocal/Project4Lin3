@@ -7,45 +7,55 @@ namespace ConnectFourGame
     {
         public static string[] options;
 
-        public virtual void EnterToExit() => Console.WriteLine("\nPress Enter to exit");
+        // insert all future arrow functions alphabetically
 
         public virtual void ClearConsole() => Console.Clear();
 
-        public virtual void PlayerTurn() => Console.Clear();
-
-        public virtual void PlayerTurn(string playerName) => Console.Write($"Player {playerName}, your turn!\n");
-
         public virtual void ConsoleTitle() => Console.Title = "Connect Four Game";
 
+        public virtual void BackgroundBlack() => Console.BackgroundColor = ConsoleColor.Black;
+
+        public virtual void BackgroundBlue() => Console.BackgroundColor = ConsoleColor.Blue;
+
+        public virtual void BackgroundWhite() => Console.BackgroundColor = ConsoleColor.White;
+
+        public virtual void BackgroundRed() => Console.BackgroundColor = ConsoleColor.Red;
+
+        public virtual void BackgroundYellow() => Console.BackgroundColor = ConsoleColor.Yellow;
+
+        public virtual void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>");  //this should be writeline
+
+        public virtual void EnterToExit() => Console.WriteLine("\nPress Enter to exit");
+
         public virtual void ForegroundBlack() => Console.ForegroundColor = ConsoleColor.Black;
+
+        public virtual void ForegroundBlue() => Console.ForegroundColor = ConsoleColor.Blue;
+
+        public virtual void ForegroundCyan() => Console.ForegroundColor = ConsoleColor.Cyan;
+
+        public virtual void ForegroundDarkYellow() => Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+        public virtual void ForegroundGray() => Console.ForegroundColor = ConsoleColor.Gray;
+
+        public virtual void ForegroundMagenta() => Console.ForegroundColor = ConsoleColor.Magenta;
+
+        public virtual void ForegroundRed() => Console.ForegroundColor = ConsoleColor.Red;
 
         public virtual void ForegroundWhite() => Console.ForegroundColor = ConsoleColor.White;
 
         public virtual void ForegroundYellow() => Console.ForegroundColor = ConsoleColor.Yellow;
 
-        public virtual void ForegroundRed() => Console.ForegroundColor = ConsoleColor.Red;
-
-        public virtual void ForegroundBlue() => Console.ForegroundColor = ConsoleColor.Blue;
-
-        public virtual void BackgroundBlack() => Console.BackgroundColor = ConsoleColor.Black;
-
-        public virtual void BackgroundWhite() => Console.BackgroundColor = ConsoleColor.White;
-
-        public virtual void BackgroundYellow() => Console.BackgroundColor = ConsoleColor.Yellow;
-
-        public virtual void BackgroundRed() => Console.BackgroundColor = ConsoleColor.Red;
-
-        public virtual void BackgroundBlue() => Console.BackgroundColor = ConsoleColor.Blue;
-
-        public virtual void ResetColor() => Console.ResetColor();
-
-        public virtual void DisplayCurrentOption(string currentOption) => Console.WriteLine($"<< {currentOption} >>");  //this should be writeline
+        public virtual void PlayerTurn(string playerName) => Console.Write($"Player {playerName}, your turn!\n");
 
         public virtual void Spaces() => Console.WriteLine("\n\n");
+
+        public virtual void ResetColor() => Console.ResetColor();
 
         public virtual void ReadKey() => Console.ReadKey(true);
 
         public virtual void Write(string element) => Console.Write(element);
+
+        public virtual void WriteLine(string element) => Console.WriteLine(element);
 
         public virtual void PlayerWins(string playerName) //object should be sent here
         {
