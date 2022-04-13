@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConnectFourGame
+namespace ConnectFourGame 
 {
-    public class Board
+    public class Board : BoardInterface
     {
 
         //attributes
@@ -47,7 +47,7 @@ namespace ConnectFourGame
             }
         }
 
-        public void SetColor(char c) // Modified by Peter!
+        public void SetColor(char c) // This should be defined by the objects
         {
 
             if (c == 'X')

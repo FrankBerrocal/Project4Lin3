@@ -80,11 +80,19 @@ namespace ConnectFourGame
 
         public override void ForegroundYellow() => base.ForegroundYellow();
 
+        public override void ForegroundRed() => base.ForegroundRed();
+
+        public override void ForegroundBlue() => base.ForegroundBlue();
+
         public override void BackgroundBlack() => base.BackgroundBlack();
 
         public override void BackgroundWhite() => base.BackgroundWhite();
 
         public override void BackgroundYellow() => base.BackgroundYellow();
+
+        public override void BackgroundRed() => base.BackgroundRed();
+
+        public override void BackgroundBlue() => base.BackgroundBlue();
 
         public override void ResetColor() => base.ResetColor();        
        
@@ -92,6 +100,11 @@ namespace ConnectFourGame
         public override void DisplayCurrentOption(string currentOption)
         {
             Console.WriteLine($"<< {currentOption} >>");
+        }
+
+        public override void Spaces()
+        {
+            Console.Write("\n\n");
         }
 
     }

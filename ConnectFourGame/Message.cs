@@ -103,6 +103,16 @@ namespace ConnectFourGame
             Console.ForegroundColor = ConsoleColor.Yellow;
         }
 
+        public virtual void ForegroundRed()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+
+        public virtual void ForegroundBlue()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
+
         public virtual void BackgroundBlack()
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -118,6 +128,16 @@ namespace ConnectFourGame
             Console.BackgroundColor = ConsoleColor.Yellow;
         }
 
+        public virtual void BackgroundRed()
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+        }
+
+        public virtual void BackgroundBlue()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+        }
+
         public virtual void ResetColor()
         {
             Console.ResetColor();
@@ -126,6 +146,21 @@ namespace ConnectFourGame
         public virtual void DisplayCurrentOption(string currentOption)
         {
             Console.WriteLine($"<< {currentOption} >>");
+        }
+
+        public virtual void Spaces()
+        {
+            Console.Write("\n\n");
+        }
+
+        public virtual void ReadKey()
+        {
+            Console.ReadKey(true);
+        }
+
+        public virtual void Test()
+        {
+
         }
 
 

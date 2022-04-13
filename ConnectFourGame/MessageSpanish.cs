@@ -21,7 +21,7 @@ namespace ConnectFourGame
 
         public override void ClearConsole()
         {
-            Console.Clear();
+            base.ClearConsole();
         }
 
         public override void PlayerTurn(string playerName)
@@ -33,24 +33,24 @@ namespace ConnectFourGame
         {
             //Console.WriteLine($"Jugador {playerName} gana!");
 
-            ConsoleColor red = ConsoleColor.Red;
-            ConsoleColor yellow = ConsoleColor.Yellow;
-            ConsoleColor blue = ConsoleColor.Blue;
-
             Console.Write("\nJugador ");
 
             if (playerName == "X")
             {
-                Console.ForegroundColor = red;   // these properties should be defined as part of the object player
+                base.ForegroundRed();
+                //Console.ForegroundColor = red;   // these properties should be defined as part of the object player
             }
             else if (playerName == "O")
             {
-                Console.ForegroundColor = yellow;
+                base.ForegroundYellow();
+                
             }
 
             Console.Write(playerName);
 
-            Console.ForegroundColor = blue;
+
+            
+            base.ForegroundBlue();
 
             Console.Write(" gana!");
         }
@@ -97,11 +97,15 @@ namespace ConnectFourGame
 
         public override void ForegroundYellow() => base.ForegroundYellow();
 
+        public override void ForegroundRed() => base.ForegroundRed();
+
         public override void BackgroundBlack() => base.BackgroundBlack();
 
         public override void BackgroundWhite() => base.BackgroundWhite();
 
         public override void BackgroundYellow() => base.BackgroundYellow();
+
+        public override void BackgroundRed() => base.BackgroundRed();
 
         public override void ResetColor() => base.ResetColor();
 
@@ -109,6 +113,11 @@ namespace ConnectFourGame
         {
             Console.WriteLine($"<< {currentOption} >>");
         }
+
+        public override void Spaces() => base.Spaces();
+
+        public override void ReadKey() => base.ReadKey();
+    
 
 
 

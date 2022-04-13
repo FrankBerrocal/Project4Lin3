@@ -10,7 +10,7 @@ namespace ConnectFourGame
     {
         // Main game logic here
         Board board = new Board();
-        MessageEnglish output = new MessageEnglish();
+        Message output = new MessageEnglish();
 
         //private void StartNewGame().  Message object should be send as paramenter here
         public void StartNewGame(Message output)
@@ -22,15 +22,17 @@ namespace ConnectFourGame
             {
                 
                 output.PlayerTurn("X");  //Console.Write($"Player playerName, your turn!\n");
-                SelectColumn(output); 
-                Console.Write("\n\n");
+                SelectColumn(output);
+                output.Spaces();
+                //Console.Write("\n\n");
                 board.Display();  // populated empty
                 if (CheckForWinningMove('X') == true)
                 {
                     
                     output.PlayerWins("X");  //Console.Write("\n\nPlayer X wins!\n\n");  
                     //playSound.Win();
-                    Console.ReadKey(true); 
+                    //Console.ReadKey(true);
+                    output.ReadKey();
                     menu.MenuRun(); 
 
                     break;
@@ -40,7 +42,8 @@ namespace ConnectFourGame
                       
                     output.PlayerWins("O");  //Console.Write("\n\nPlayer O wins!\n\n");
                     //playSound.Win();
-                    Console.ReadKey(true); 
+                    //Console.ReadKey(true);
+                    output.ReadKey();
                     menu.MenuRun(); 
 
                     break;
@@ -87,10 +90,12 @@ namespace ConnectFourGame
                     default:
                         board.selectedColumn = 666;
 
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        //Console.ForegroundColor = ConsoleColor.Red;
+                        output.ForegroundRed();
                         
                         output.InvalidColumn();  //Console.Write("\nInvalid column selected! Try again.\n\n");
-                        Console.ResetColor();
+                        output.ResetColor();
+                        //Console.ResetColor();
 
                         //playSound.Wrong();
 
