@@ -45,13 +45,17 @@ namespace ConnectFourGame
 
         public virtual void ForegroundYellow() => Console.ForegroundColor = ConsoleColor.Yellow;
 
+        public virtual void InvalidColumn() => this.Write("\nInvalid column selected! Try again.\n\n");
+
         public virtual void PlayerTurn(string playerName) => Console.Write($"Player {playerName}, your turn!\n");
 
         public virtual void Spaces() => Console.WriteLine("\n\n");
 
-        public virtual void ResetColor() => Console.ResetColor();
-
         public virtual void ReadKey() => Console.ReadKey(true);
+
+        public virtual void RecurrentInputError() => Console.Write("\n\nInput error: use numbers from 1 - 7 only.\n");
+
+        public virtual void ResetColor() => Console.ResetColor();
 
         public virtual void Write(string element) => Console.Write(element);
 
@@ -82,11 +86,6 @@ namespace ConnectFourGame
         {
             this.Write("\nEnter [0] to return to Main Menu");
             this.Write("\nChoose a column [1 to 7]: ");
-        }
-
-        public virtual void InvalidColumn()
-        {
-            this.Write("\nInvalid column selected! Try again.\n\n");
         }
 
         public virtual string[] MenuOptions()

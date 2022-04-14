@@ -8,6 +8,12 @@ namespace ConnectFourGame
 {
     public interface PlayerInterface
     {
-        // Player Interface here
+
+        Message getPlayerColor();
+        void DisplayPlayerColorBlue();
+        void DisplayPlayerColorYellow();
+        void DisplayPlayerColorDarkYellow();
+        void DisplayPlayerColorWhite();
+        void DisplayPlayerColorRed();
     }
 }

@@ -51,7 +51,7 @@ namespace ConnectFourGame
         public override void ForegroundWhite() => base.ForegroundWhite();
 
         public override void ForegroundYellow() => base.ForegroundYellow();
-        
+
         public override void InvalidColumn() => base.InvalidColumn();
 
         public override void PlayerTurn(string playerName) => base.PlayerTurn(playerName);
@@ -59,6 +59,10 @@ namespace ConnectFourGame
         public override void PlayerWins(string playerName)  => base.PlayerWins(playerName);
 
         public override void SelectColumn() => base.SelectColumn();
+
+        public override void ReadKey() => base.ReadKey();
+
+        public override void RecurrentInputError() => base.RecurrentInputError();
 
         public override void ResetColor() => base.ResetColor();        
 

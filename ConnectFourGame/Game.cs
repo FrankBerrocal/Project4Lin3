@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ConnectFourGame
 {
@@ -20,37 +21,70 @@ namespace ConnectFourGame
 
             board.Initiate();  
             board.Display();  // empty board
-            
+            try
+            {
+                Processing(player1, player2, output, menu);  //processing code converted to helper to handle exceptions
+            }
+
+            catch (System.FormatException)  //Specific exception
+            {
+                output.ForegroundGray();
+                output.InvalidColumn();
+                output.ForegroundBlue();
+                board.Initiate();
+                board.Display();
+                Processing(player1, player2, output, menu);
+            }
+            catch (Exception)  //generic exception
+            {
+                output.ForegroundGray();
+                output.InvalidColumn();
+                output.ForegroundBlue();
+                board.Initiate();
+                board.Display();
+                Processing(player1, player2, output, menu);
+            }
+            finally
+            {
+                
+               
+               output.RecurrentInputError();
+               menu.DisplayOptions();
+            }
+        }
+
+        private void Processing(Player player1, Player player2, Message output, Menu menu)
+        {
             do
             {
                 //validation for the player turn should be made here.  The second validation should be made with player2
                 player1.DisplayPlayerColorDarkYellow();  //change the color of foreground for the object.
                 output.PlayerTurn(player1.ToString());  //Display the name of the object.
-                //until here for object manipulation
+                                                        //until here for object manipulation
                 output.ForegroundBlue();
                 SelectColumn(output);
                 output.Spaces();
-                
+
                 board.Display();  // populated empty
                 if (CheckForWinningMove(char.Parse(player1.ToString())) == true)  //name is converted to char for validation
                 {
-                    
+
                     output.PlayerWins(player1.ToString()); //name presented in the message
                     //playSound.Win();
-                    
+
                     output.ReadKey();
-                    menu.MenuRun(); 
+                    menu.MenuRun();
 
                     break;
                 }
                 else if (CheckForWinningMove(char.Parse(player2.ToString())) == true) //name is converted to char for validation
                 {
-                      
+
                     output.PlayerWins(player2.ToString());  //name presented in the message
                     //playSound.Win();
-                    
+
                     output.ReadKey();
-                    menu.MenuRun(); 
+                    menu.MenuRun();
 
                     break;
                 }
@@ -60,14 +94,27 @@ namespace ConnectFourGame
         
         private void SelectColumn(Message output) 
         {
-            MenuEnglish menu = new(); 
+            MenuEnglish menu = new();
+            int capture;
             do
             {
-                output.SelectColumn();    //Console.Write("\nChoose a column [1 to 7]: "); 
+                output.SelectColumn();    
                 string input = Console.ReadLine();
-                int c = Int32.Parse(input);
+                try
+                {
+                    capture = Int32.Parse(input);
+                }
+                catch(SystemException)
+                {
+                    
+                    board.Display();
+                    capture = 1; //if the input is non numeric, column one is chosen.
+                    output.RecurrentInputError();
+                }
+                
+                
 
-                switch (c)
+                switch (capture)
                 {
                     case 0:    
                         menu.MenuRun(); // Takes player back to the Main Menu
@@ -94,13 +141,12 @@ namespace ConnectFourGame
                         board.selectedColumn = 6;
                         break;
                     default:
-                        board.selectedColumn = 666;
 
+                        board.selectedColumn = 666;
                         output.ForegroundRed();
                         output.InvalidColumn();  
                         output.ResetColor();
                         
-
                         //playSound.Wrong();
 
                         board.Display();

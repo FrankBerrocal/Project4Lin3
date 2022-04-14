@@ -56,6 +56,8 @@ namespace ConnectFourGame
 
         public override void ReadKey() => base.ReadKey();
 
+        public override void RecurrentInputError() => Console.Write("\n\nError de entrada: use numeros de 1 - 7.\n");
+
         public override void ResetColor() => base.ResetColor();
 
         public override void Spaces() => base.Spaces();
