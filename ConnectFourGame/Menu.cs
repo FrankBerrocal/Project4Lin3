@@ -6,74 +6,87 @@ using System.Threading.Tasks;
 
 namespace ConnectFourGame
 {
-    public class Menu
+    public abstract class Menu : MenuInterface
     {
-        // Main Menu here
+        
+        private Game game = new();
+        private Message Output = new MessageEnglish(); //creates a message object.
         
         private int SelectedIndex;
         private string[] Options;
-        public static string[] options = new string[] { "Play Game", "Change Language", "Exit Game" };  //menu options
+        public static string gameMode = "Game Mode: Classic";
 
-        public Menu(string[] options)  //options should be passed as part of the constructor.   
+
+        public Menu()
         {
-            Options = options;
-            SelectedIndex = 0;
+            //Options = Output.MenuOptions();  //brings the menu options from the message object           
         }
 
 
-        private void DisplayOptions()  //suitable for child class, create parent class for theric purposes.
+        public virtual void DisplayOptions()  //public access methods
         {
-            string title = @"   ______                            __     ______                    ______                   
-  / ____/___  ____  ____  ___  _____/ /_   / ____/___  __  _______   / ____/___ _____ ___  ___ 
- / /   / __ \/ __ \/ __ \/ _ \/ ___/ __/  / /_  / __ \/ / / / ___/  / / __/ __ `/ __ `__ \/ _ \
-/ /___/ /_/ / / / / / / /  __/ /__/ /_   / __/ / /_/ / /_/ / /     / /_/ / /_/ / / / / / /  __/
-\____/\____/_/ /_/_/ /_/\___/\___/\__/  /_/    \____/\__,_/_/      \____/\__,_/_/ /_/ /_/\___/                                                                                                                                                                                                                                 
-";
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(title);
-            Console.ResetColor();
+            Options = new string[] { "Play in English", "Jugar en español", gameMode, "Exit Game" };
+            Output.MaintTitle();
+            DisplayOptionsProcessing(Options);  //processing methods are private.
 
-            for (int i = 0; i < Options.Length; i++)
+        }
+
+
+        public virtual void MenuRun()
+        {
+
+            //SelectedIndex = 0;
+            ConsoleKey keyPressed = 0;
+            SelectedIndex = KeyListener(keyPressed);
+            CommandProcessing(SelectedIndex);  //processing methods are private.
+
+        }
+
+        private void DisplayOptionsProcessing(string[] Options)  //private helper methods.
+        {
+            
+            for (int i = 0; i < Options.Length; i++)  //process the array sent
             {
                 string currentOption = Options[i];
 
                 if (i == SelectedIndex)  //change menu option color with selection.
                 {
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.BackgroundColor = ConsoleColor.White;
+                    
+                    Output.ForegroundBlack();
+                    Output.BackgroundWhite();
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    
+                    Output.ForegroundYellow();
+                    Output.BackgroundBlack();
+
                 }
 
-                Console.WriteLine($"<< {currentOption} >>");
-
-                Console.ResetColor();
+                Output.DisplayCurrentOption(currentOption);
+                Output.ResetColor();
             }
         }
 
-
-        public int Run()  //describe in parent as abstract.  
+        private int KeyListener(ConsoleKey keyPressed)  //private helper methods
         {
-            ConsoleKey keyPressed;
-
             do
             {
-                Console.Clear();
+                Output.ClearConsole();
                 DisplayOptions();
 
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                keyPressed = keyInfo.Key;
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true); //reads interaction from the console
+                keyPressed = keyInfo.Key; //listens to any key pressed
 
                 // Update SelectedIndex based on arrow keys.
-                if (keyPressed == ConsoleKey.UpArrow)
+
+                if (keyPressed == ConsoleKey.UpArrow)  //if key pressed is arrow
                 {
                     SelectedIndex--;
                     if (SelectedIndex == -1)
                     {
                         SelectedIndex = 0;
+
                     }
                 }
                 else if (keyPressed == ConsoleKey.DownArrow)
@@ -82,12 +95,80 @@ namespace ConnectFourGame
                     if (SelectedIndex == Options.Length)
                     {
                         SelectedIndex = Options.Length - 1;
+
                     }
                 }
 
             } while (keyPressed != ConsoleKey.Enter);
-
             return SelectedIndex;
+
+
+        }
+        //local processing
+        private void CommandProcessing(int SelectedIndex)  //private helper methods
+        {
+            Board classicBoard = new BoardClassic();
+            Board retroBoard = new BoardRetro();
+            Message outputEng = new MessageEnglish();
+            Message outputEsp = new MessageSpanish();
+            MenuEnglish menu = new();
+
+            switch (SelectedIndex)  //execution of program options.
+            {
+                case 0:
+                    if (gameMode == "Game Mode: Classic")
+                    {
+                        Output.ClearConsole();
+                        game.StartNewGame(outputEng, classicBoard);
+                    }
+                    else if (gameMode == "Game Mode: Retro")
+                    {
+                        Output.ClearConsole();
+                        game.StartNewGame(outputEng, retroBoard);
+                    }
+                    //output.ClearConsole();
+                    //game.StartNewGame(outputEng); // Modified by Peter!
+
+                    break;
+                case 1:
+                    if (gameMode == "Game Mode: Classic")
+                    {
+                        Output.ClearConsole();
+                        game.StartNewGame(outputEsp, classicBoard);
+                    }
+                    else if (gameMode == "Game Mode: Retro")
+                    {
+                        Output.ClearConsole();
+                        game.StartNewGame(outputEsp, retroBoard);
+                    }
+                    //output.ClearConsole();
+                    //game.StartNewGame(outputEsp); // Modified by Peter!
+
+                    break;
+                case 2:
+                    // TODO
+                    // Change Game Mode from Standard to Retro
+
+                    if (gameMode == "Game Mode: Classic")
+                    {
+                        gameMode = "Game Mode: Retro";
+                    }
+                    else if (gameMode == "Game Mode: Retro")
+                    {
+                        gameMode = "Game Mode: Classic";
+                    }
+                    menu.MenuRun();
+
+                    //Environment.Exit(0); // Modified by Peter!
+
+                    break;
+                case 3:
+                    // Exit Game
+                    Environment.Exit(0); // Modified by Peter!
+
+                    break;
+            }
         }
     }
+
 }

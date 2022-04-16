@@ -3,85 +3,142 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ConnectFourGame
 {
     public class Game
     {
-        // Main game logic here
-        Board board = new Board();
-
-        public void Run()
+        public void StartNewGame(Message output, Board boardType)
         {
-            DisplayMainMenu();
-            Console.ReadLine();
-        }
+            Board board = boardType;
+            MenuEnglish menu = new();
 
-        private void DisplayMainMenu()
-        {
-            Menu menu = new Menu(Menu.options);
-            int selectedIndex = menu.Run();
+            Player player1 = new Player("X", output);  //Definition of player properties, sending name and object message
+            Player player2 = new Player("O", output);
 
-            switch (selectedIndex)  //execution of program options.
+            board.Initiate();  
+            board.Display();  // empty board
+            try
             {
-                case 0:
-                    Console.Clear();
-                    board.Initiate();
-                    board.Display();
-                    StartNewGame();
-                    break;
-                case 1:
-                    // Change language
+                Processing(player1, player2, output, menu, boardType);  //processing code converted to helper to handle exceptions
+            }
 
-                    break;
-                case 2:
-                    // Exit game
-                    Console.WriteLine("\nPress Enter to exit");  //note:  message as object
-                    Console.ReadKey(true);
-                    Environment.Exit(0);
-                    break;
+            catch (FormatException)  //Specific exception
+            {
+                output.ForegroundGray();
+                output.InvalidColumn();
+                output.ForegroundBlue();
+                board.Initiate();
+                board.Display();
+                Processing(player1, player2, output, menu, boardType);
+            }
+            catch (Exception)  //generic exception
+            {
+                output.ForegroundGray();
+                output.InvalidColumn();
+                output.ForegroundBlue();
+                board.Initiate();
+                board.Display();
+                Processing(player1, player2, output, menu, boardType);
+            }
+            finally
+            {
+                
+               
+               output.RecurrentInputError();
+               menu.DisplayOptions();
             }
         }
 
-        //private void StartNewGame()
-        private void StartNewGame()
+        private void Processing(Player player1, Player player2, Message output, Menu menu, Board boardType)
         {
+            Board board = boardType;
+            
+
             do
             {
-                Console.Write($"Player playerName, your turn!\n");  //note:  message as object
-                SelectColumn();
-                Console.Write("\n\n");
-                board.Display();
-                if (CheckForWinningMove('X') == true)
-                {
-                    Console.Write("\n\nPlayer X wins!\n\n");//note:  message as object
+                //validation for the player turn should be made here.  The second validation should be made with player2
+                //player1.DisplayPlayerColorYellow();  //change the color of foreground for the object.
+                //output.PlayerTurn(player1.ToString());  //Display the name of the object.
+                                                        //until here for object manipulation
 
+                if (Board.disc == 'X')
+                {
+                    // Player X your turn
+                    player1.DisplayPlayerColorRed();
+                    output.PlayerTurn(player1.ToString());
+                }
+                else if (Board.disc == 'O')
+                {
+                    // Player O your turn
+                    player2.DisplayPlayerColorYellow();
+                    output.PlayerTurn(player2.ToString());
+                }
+
+
+                output.ForegroundBlue();
+                SelectColumn(output, boardType);
+                output.Spaces();
+
+                board.Display();  // populated empty
+
+                if (CheckForWinningMove(char.Parse(player1.ToString()), boardType) == true)  //name is converted to char for validation
+                {
+
+                    output.PlayerWins(player1.ToString()); //name presented in the message
                     //playSound.Win();
+
+                    output.ReadKey();
+                    menu.MenuRun();
 
                     break;
                 }
-                else if (CheckForWinningMove('O') == true)
+                else if (CheckForWinningMove(char.Parse(player2.ToString()), boardType) == true) //name is converted to char for validation
                 {
-                    Console.Write("\n\nPlayer O wins!\n\n");//note:  message as object
 
+                    output.PlayerWins(player2.ToString());  //name presented in the message
                     //playSound.Win();
+
+                    output.ReadKey();
+                    menu.MenuRun();
 
                     break;
                 }
             } while (true);
         }
 
-        //private void SelectColumn()
-        private void SelectColumn()
+        
+        private void SelectColumn(Message output, Board boardType) 
         {
+            Board board = boardType;
+            MenuEnglish menu = new();
+            int capture;
             do
             {
-                Console.Write("\nChoose a column [1 to 7]: ");
+                output.SelectColumn();    
                 string input = Console.ReadLine();
-                int c = Int32.Parse(input);
-
-                switch (c)
+                try
                 {
+                    capture = Int32.Parse(input);
+                }
+                catch(SystemException)
+                {
+                    
+                    board.Display();
+                    capture = 666; //if the input is non numeric, column one is chosen.
+                    output.ForegroundRed();
+                    output.RecurrentInputError();
+                    output.ForegroundBlue();
+                }
+                
+                
+
+                switch (capture)
+                {
+                    case 0:    
+                        menu.MenuRun(); // Takes player back to the Main Menu
+                        break;
                     case 1:
                         board.selectedColumn = 0;
                         break;
@@ -104,12 +161,12 @@ namespace ConnectFourGame
                         board.selectedColumn = 6;
                         break;
                     default:
+
                         board.selectedColumn = 666;
-
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("\nInvalid column selected! Try again.\n\n");  //note:  message as object
-                        Console.ResetColor();
-
+                        output.ForegroundRed();
+                        output.InvalidColumn();  
+                        output.ResetColor();
+                        
                         //playSound.Wrong();
 
                         board.Display();
@@ -118,8 +175,15 @@ namespace ConnectFourGame
 
                 if ((board.selectedColumn >= 0 && board.selectedColumn <= 6) && (board.boardGrid[0, board.selectedColumn] == ' '))
                 {
-                    DropDisc();
+                    DropDisc(boardType);
                     Board.disc = (Board.disc == 'X') ? 'O' : 'X';
+                    break;
+                }
+                else
+                {
+                    output.ForegroundRed();
+                    output.InvalidColumn();
+                    output.ForegroundBlue();
                     break;
                 }
 
@@ -127,8 +191,9 @@ namespace ConnectFourGame
         }
 
         //private void DropDisc()
-        private void DropDisc()
+        private void DropDisc(Board boardType)
         {
+            Board board = boardType;
             int ROWS = Board.Rows;
             char disc = Board.disc;
             int level;
@@ -146,10 +211,12 @@ namespace ConnectFourGame
             }
         }
 
-        private bool CheckForWinningMove(char disc)  //note:  implement as object
+        private bool CheckForWinningMove(char disc, Board boardType) //All moves should be objects.
         {
+            Board board = boardType;
             int ROWS = Board.Rows;
             int COLS = Board.Columns;
+
 
             // check HORIZONTAL slots for a winning move
             for (int c = 0; c < COLS - 3; c++)

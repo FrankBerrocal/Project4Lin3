@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Tunes\" />
+    <Compile Remove="Tunes\**" />
+    <EmbeddedResource Remove="Tunes\**" />
+    <None Remove="Tunes\**" />
   </ItemGroup>
 
 </Project>
